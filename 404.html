@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- REVIEW: Replace "REPLACE WITH MY NAME" with your actual name before deployment -->
+  <title>Page Not Found | REPLACE WITH MY NAME — VLSI Portfolio</title>
+  <meta name="description" content="The page you requested could not be found." />
+
+  <!-- Tell search engines not to index the 404 page -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Canonical URL — REVIEW: replace with your actual deployed domain -->
+  <link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN.com/404.html" />
+
+  <!-- Favicon — REVIEW: ensure favicon files exist in assets/images/ -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Minimal inline style specific to the 404 layout.
+       Kept here (not in style.css) because it is only needed
+       on this page and avoids loading an extra file. -->
+  <style>
+    .error-page {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      background: var(--clr-substrate);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Decorative circuit pattern — purely visual, aria-hidden */
+    .error-circuit {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.07;
+    }
+
+    .error-code {
+      font-family: var(--font-mono);
+      font-size: clamp(5rem, 20vw, 10rem);
+      font-weight: 800;
+      color: var(--clr-signal);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      /* Subtle scan-line effect via repeating gradient */
+      background: repeating-linear-gradient(
+        180deg,
+        var(--clr-signal) 0px,
+        var(--clr-signal) 2px,
+        rgba(0, 212, 255, 0.4) 2px,
+        rgba(0, 212, 255, 0.4) 4px
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    .error-subtitle {
+      font-size: clamp(0.65rem, 2vw, 0.75rem);
+      font-family: var(--font-mono);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--clr-teal);
+      margin-bottom: 1.5rem;
+    }
+
+    .error-heading {
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      font-weight: 700;
+      color: var(--clr-text-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .error-body {
+      font-size: 1rem;
+      color: var(--clr-text-secondary);
+      max-width: 440px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Waveform divider */
+    .error-waveform {
+      width: 280px;
+      margin: 0 auto 2rem;
+      color: var(--clr-signal);
+      opacity: 0.3;
+    }
+
+    .error-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+
+    /* Quick links */
+    .error-links {
+      margin-top: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+      justify-content: center;
+    }
+    .error-links a {
+      font-size: 0.8rem;
+      color: var(--clr-text-muted);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.15s ease;
+    }
+    .error-links a:hover { color: var(--clr-signal); }
+
+    @media (max-width: 480px) {
+      .error-actions { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#error-main">Skip to main content</a>
+
+  <main id="error-main" class="error-page" role="main">
+
+    <!-- Decorative background circuit SVG (aria-hidden) -->
+    <svg
+      class="error-circuit"
+      viewBox="0 0 800 600"
+      aria-hidden="true"
+      focusable="false"
+      preserveAspectRatio="xMidYMid slice"
+    >
+      <!-- Horizontal traces -->
+      <path d="M0 150 H200 V200 H450 V150 H700 V200 H800" fill="none" stroke="currentColor" stroke-width="1.5" style="color:#00d4ff"/>
+      <path d="M0 400 H150 V350 H400 V400 H650 V350 H800" fill="none" stroke="currentColor" stroke-width="1.5" style="color:#00b8a0"/>
+      <!-- Vertical spurs -->
+      <path d="M200 150 V80 M450 150 V80 M700 150 V80" fill="none" stroke="#00d4ff" stroke-width="1"/>
+      <path d="M150 400 V470 M400 350 V280 M650 400 V470" fill="none" stroke="#00b8a0" stroke-width="1"/>
+      <!-- Via dots -->
+      <circle cx="200" cy="150" r="4" fill="#00d4ff" opacity="0.5"/>
+      <circle cx="450" cy="150" r="4" fill="#00d4ff" opacity="0.5"/>
+      <circle cx="700" cy="150" r="4" fill="#00d4ff" opacity="0.5"/>
+      <circle cx="150" cy="400" r="4" fill="#00b8a0" opacity="0.5"/>
+      <circle cx="400" cy="400" r="4" fill="#00b8a0" opacity="0.5"/>
+      <circle cx="650" cy="400" r="4" fill="#00b8a0" opacity="0.5"/>
+      <!-- Chip outlines -->
+      <rect x="320" y="240" width="160" height="120" rx="4" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.3"/>
+      <line x1="320" y1="270" x2="290" y2="270" stroke="#00d4ff" stroke-width="1" opacity="0.3"/>
+      <line x1="320" y1="300" x2="290" y2="300" stroke="#00d4ff" stroke-width="1" opacity="0.3"/>
+      <line x1="320" y1="330" x2="290" y2="330" stroke="#00d4ff" stroke-width="1" opacity="0.3"/>
+      <line x1="480" y1="270" x2="510" y2="270" stroke="#00d4ff" stroke-width="1" opacity="0.3"/>
+      <line x1="480" y1="300" x2="510" y2="300" stroke="#00d4ff" stroke-width="1" opacity="0.3"/>
+      <line x1="480" y1="330" x2="510" y2="330" stroke="#00d4ff" stroke-width="1" opacity="0.3"/>
+    </svg>
+
+    <!-- Error code -->
+    <p class="error-code" aria-label="Error 404">404</p>
+    <p class="error-subtitle" aria-hidden="true">Signal Lost · Address Not Found</p>
+
+    <h1 class="error-heading" id="error-heading">
+      This page does not exist
+    </h1>
+
+    <!-- Waveform accent (decorative) -->
+    <svg
+      class="error-waveform"
+      viewBox="0 0 280 30"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path
+        d="M0 15 H30 V5 H50 V25 H70 V5 H90 V25 H110 V15 H140 V8 H160 V22 H180 V8 H200 V22 H220 V15 H280"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="square"
+      />
+    </svg>
+
+    <p class="error-body">
+      The address you requested could not be located. It may have been moved,
+      renamed, or never existed. Check the URL, or use the navigation below
+      to return to the portfolio.
+    </p>
+
+    <div class="error-actions">
+      <a href="index.html" class="btn btn--primary">Return to Portfolio</a>
+      <a href="index.html#contact" class="btn btn--ghost">Contact</a>
+    </div>
+
+    <!-- Quick section links -->
+    <nav class="error-links" aria-label="Quick navigation">
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#education">Education</a>
+      <a href="index.html#contact">Contact</a>
+      <!-- REVIEW: Confirm that assets/resume.pdf is present before deployment -->
+      <a href="assets/resume.pdf" download>Download Resume</a>
+    </nav>
+
+  </main>
+
+  <!--
+    No script.js loaded on this page — the 404 page is intentionally
+    minimal and requires no JavaScript. This reduces surface area
+    and ensures the page works even if JS fails to load.
+  -->
+
+</body>
+</html>

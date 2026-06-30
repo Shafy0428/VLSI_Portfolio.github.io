@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  sitemap.xml — VLSI & Digital Design Portfolio
+  Reference: https://www.sitemaps.org/protocol.html
+
+  REVIEW BEFORE DEPLOYMENT:
+    1. Replace every instance of "https://REPLACE-WITH-YOUR-DOMAIN.com"
+       with your actual deployed URL.
+    2. Update all <lastmod> dates to reflect when you last edited each page.
+    3. If you add new pages (e.g. a blog or project subpage), add new <url>
+       entries following the same pattern.
+    4. Submit this sitemap to Google Search Console after deployment:
+       https://search.google.com/search-console
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Main portfolio page -->
+  <url>
+    <loc>https://REPLACE-WITH-YOUR-DOMAIN.com/</loc>
+    <!-- REVIEW: Update to the date you last significantly edited index.html -->
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!--
+    Section anchors are part of index.html, not separate pages,
+    so they share the same <loc>. They are listed here as comments
+    only, for your reference. Search engines follow the anchor
+    links from the main page automatically.
+
+    Sections present in index.html:
+      #home         — Hero / landing
+      #about        — About me
+      #interests    — Technical interests
+      #skills       — Skills
+      #design-flow  — VLSI design flow
+      #projects     — Projects
+      #evidence     — Technical evidence
+      #education    — Education
+      #experience   — Academic & practical experience
+      #contact      — Contact
+  -->
+
+</urlset>

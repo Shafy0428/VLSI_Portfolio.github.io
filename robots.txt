@@ -1,0 +1,22 @@
+# robots.txt — VLSI & Digital Design Portfolio
+# Reference: https://www.robotstxt.org/robotstxt.html
+#
+# REVIEW BEFORE DEPLOYMENT:
+#   Replace "https://REPLACE-WITH-YOUR-DOMAIN.com" with your
+#   actual deployed URL (e.g. https://username.github.io).
+
+User-agent: *
+Allow: /
+
+# Do not index the 404 error page
+Disallow: /404.html
+
+# Do not index any future admin or draft folders
+# (none exist yet, but listed here as a precaution)
+Disallow: /draft/
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+# REVIEW: Replace with your actual deployed URL
+Sitemap: https://REPLACE-WITH-YOUR-DOMAIN.com/sitemap.xml
